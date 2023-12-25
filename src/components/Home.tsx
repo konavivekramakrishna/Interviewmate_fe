@@ -7,19 +7,17 @@ const categoryList = [
   "System Design",
   "UX Design",
   "Data Science",
-  "Mobile App Development",
   "Cybersecurity",
   "Cloud Computing",
-  "Product Management",
 ];
 
 export default function Home() {
   return (
-    <div className=" bg-white rounded-xl">
-      <div className="flex-col flex justify-center items-center mt-10">
-        <h1 className="text-3xl font-bold underline mb-5">Select a category</h1>
-        <Categories categoryList={categoryList} />
+      <div className="flex flex-col gap-2 justify-center items-center mt-6">
+        <div className="text-3xl font-bold underline">
+          Select a category
+        </div>
+          <Categories categoryList={categoryList} />
       </div>
-    </div>
   );
 }

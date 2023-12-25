@@ -5,7 +5,7 @@ export const AppContainer = (props: { children: React.ReactNode }) => {
   return (
     <div className="flex bg-gray-100 min-h-screen font-sans">
       <NavBar />
-      <div className="w-full mx-auto bg-white mt-12 justify-center rounded-xl">
+      <div className="flex flex-col mt-10 p-2 mr-2 justify-between items-center w-full fixed">
         {props.children}
       </div>
     </div>
