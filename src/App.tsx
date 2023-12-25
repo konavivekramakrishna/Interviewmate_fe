@@ -1,14 +1,13 @@
 import "./App.css";
-import Home from "./components/Home";
-import { NavBar } from "./components/NavBar";
+import { AppContainer } from "./components/AppContainer";
+import AppRouter from "./router/AppRouter";
 
 function App() {
   return (
     <div className="flex bg-gray-100 min-h-screen font-sans">
-      <NavBar />
-      <div className="w-full mx-auto bg-white  rounded-xl">
-        <Home/>
-      </div>
+      <AppContainer>
+        <AppRouter />
+      </AppContainer>
     </div>
   );
 }
