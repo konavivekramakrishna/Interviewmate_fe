@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import { navigate } from "raviger";
 
 const Category = ({ name }: { name: string }) => {
-  const [selected, setSelected] = useState(false);
-
   const handleClick = () => {
-    setSelected(!selected);
-    // Add your logic here for handling the category selection
+    navigate(`/category/${name}`);
   };
 
   return (
     <div
-      className={`cursor-pointer p-2 m-2 rounded-md ${selected ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+      className={`cursor-pointer p-2 m-2 rounded-md bg-slate-400 hover:bg-slate-200 w-80 text-center`}
       onClick={handleClick}
     >
       {name}

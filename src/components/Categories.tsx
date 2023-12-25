@@ -1,35 +1,17 @@
-// import React from 'react';
-// import Category from './Category';
-
-// const Categories = ({ categoryList }: { categoryList: string[] }) => {
-//   return (
-//     <div className="flex flex-wrap gap-2">
-//       {categoryList.map((category, index) => (
-//         <Category key={index} name={category} />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default Categories;
-
-// Categories.js
-import React from 'react';
-import Category from './Category';
+import Category from "./Category";
 
 const Categories = ({ categoryList }: { categoryList: string[] }) => {
-  const rows = [];
-  for (let i = 0; i < categoryList.length; i += 2) {
-    const categoryRow = (
-      <div key={i} className="flex justify-around m-2">
-        {categoryList[i] && <Category name={categoryList[i]} />}
-        {categoryList[i + 1] && <Category name={categoryList[i + 1]} />}
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <div className="flex flex-col items-center">
+        {categoryList.map((category, index) => (
+          <div key={index} className="mb-2">
+            <Category name={category} />
+          </div>
+        ))}
       </div>
-    );
-    rows.push(categoryRow);
-  }
-
-  return <div>{rows}</div>;
+    </div>
+  );
 };
 
 export default Categories;

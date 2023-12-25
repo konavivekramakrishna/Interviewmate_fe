@@ -1,8 +1,17 @@
-// Home.js
-import React from 'react';
-import Categories from './Categories';
+import Categories from "./Categories";
 
-const categoryList = ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5']; 
+const categoryList = [
+  "Machine Learning",
+  "Full Stack Development",
+  "Software Engineering",
+  "System Design",
+  "UX Design",
+  "Data Science",
+  "Mobile App Development",
+  "Cybersecurity",
+  "Cloud Computing",
+  "Product Management",
+];
 
 export default function Home() {
   return (
