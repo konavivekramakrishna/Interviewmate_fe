@@ -1,5 +1,4 @@
 import AudioInput from "./AudioInput";
-import OpenAI from "openai";
 
 const CategoryPage = ({ name }: { name: string }) => {
   // const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
@@ -18,12 +17,10 @@ const CategoryPage = ({ name }: { name: string }) => {
   //   console.log(completion.choices[0].message.content);
   // }
 
-
   return (
     <div className="mt-14">
       <h2>Category Page: {name}</h2>
 
-      {/* <button onClick={() => main()}>run</button> */}
       <AudioInput />
     </div>
   );

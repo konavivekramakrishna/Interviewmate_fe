@@ -3,8 +3,10 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import useClipboard from "react-use-clipboard";
+import { AnswersContext } from "../context/answers";
 
 const AudioInput = () => {
+  const { answers, setAnswers } = React.useContext(AnswersContext);
   const [textToCopy, setTextToCopy] = React.useState("");
   const [isCopied, setCopied] = useClipboard(textToCopy, {
     successDuration: 1000,
@@ -14,7 +16,11 @@ const AudioInput = () => {
     useSpeechRecognition();
 
   const printTranscript = () => {
-    console.log(transcript);
+    setAnswers((currentAnswers) => [...currentAnswers, transcript]);
+  };
+ 
+  const printAnswers = () => {
+    setAnswers([...answers, transcript]);
   };
 
   if (!browserSupportsSpeechRecognition) {
@@ -56,6 +62,9 @@ const AudioInput = () => {
           </button>
           <button className="bg-green-500 m-4" onClick={printTranscript}>
             Print Transcript
+          </button>
+          <button className="bg-green-500 m-4" onClick={printAnswers}>
+            Print Answers
           </button>
         </div>
       </div>
