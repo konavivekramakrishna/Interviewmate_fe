@@ -1,3 +1,5 @@
+import { useState } from "react";
+import QuestionCard from "./QuestionCard";
 import AudioInput from "./AudioInput";
 
 const CategoryPage = ({ name }: { name: string }) => {
@@ -17,11 +19,17 @@ const CategoryPage = ({ name }: { name: string }) => {
   //   console.log(completion.choices[0].message.content);
   // }
 
+  const [questionNumber, setQuestionNumber] = useState(0);
+  const questions = ["question1", "question2", "question3"];
+
   return (
     <div className="mt-14">
-      <h2>Category Page: {name}</h2>
-
+      <div className="w-full text-gray-900 bg-slate-200 p-4 mt-6 rounded-lg">
+      <h2 className="text-4xl ">{name}</h2>
+      <QuestionCard question={questions[questionNumber]} setQuestionNumber = {setQuestionNumber} questionNumber = {questionNumber} />
       <AudioInput />
+
+      </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const AudioInput = () => {
   const printTranscript = () => {
     setAnswers((currentAnswers) => [...currentAnswers, transcript]);
   };
- 
+
   const printAnswers = () => {
     setAnswers([...answers, transcript]);
   };
@@ -33,12 +33,6 @@ const AudioInput = () => {
   return (
     <>
       <div className="container">
-        <h2>Speech to Text Converter</h2>
-        <br />
-        <p>
-          A React hook that converts speech from the microphone to text and
-          makes it available to your React components.
-        </p>
         <div
           className="main-content"
           onClick={() => {
@@ -51,19 +45,28 @@ const AudioInput = () => {
           <button onClick={setCopied}>
             {isCopied ? "Copied!" : "Copy to clipboard"}
           </button>
-          <button className="bg-blue-500 m-4" onClick={startListening}>
+          <button
+            className="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 mx-4 my-6 rounded-lg"
+            onClick={startListening}
+          >
             Start Listening
           </button>
           <button
-            className="bg-red-500 m-4"
+            className="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 mx-4 my-6 rounded-lg"
             onClick={SpeechRecognition.stopListening}
           >
             Stop Listening
           </button>
-          <button className="bg-green-500 m-4" onClick={printTranscript}>
+          <button
+            className="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 mx-4 my-6 rounded-lg"
+            onClick={printTranscript}
+          >
             Print Transcript
           </button>
-          <button className="bg-green-500 m-4" onClick={printAnswers}>
+          <button
+            className="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 mx-4 my-6 rounded-lg"
+            onClick={printAnswers}
+          >
             Print Answers
           </button>
         </div>
