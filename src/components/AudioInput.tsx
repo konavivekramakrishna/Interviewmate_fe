@@ -18,9 +18,8 @@ const AudioInput = () => {
   const printTranscript = () => {
     setAnswers((currentAnswers) => [...currentAnswers, transcript]);
   };
-
   const printAnswers = () => {
-    setAnswers([...answers, transcript]);
+    console.log(answers);
   };
 
   if (!browserSupportsSpeechRecognition) {

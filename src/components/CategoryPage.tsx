@@ -1,34 +1,61 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import QuestionCard from "./QuestionCard";
 import AudioInput from "./AudioInput";
+import { QuestionsContext } from "../context/questions";
+import OpenAI from "openai";
 
 const CategoryPage = ({ name }: { name: string }) => {
-  // const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-  // console.log(apiKey);
-  // const openai = new OpenAI({
-  //   apiKey: apiKey,
-  //   dangerouslyAllowBrowser: true,
-  // });
+  const { questions, setQuestions } = useContext(QuestionsContext);
+  const [loading, setLoading] = useState(false);
 
-  // async function main() {
-  //   const completion = await openai.chat.completions.create({
-  //     messages: [{ role: "system", content: "What is your name." }],
-  //     model: "gpt-3.5-turbo",
-  //   });
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      setLoading(true);
+      const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
-  //   console.log(completion.choices[0].message.content);
-  // }
+      const openai = new OpenAI({
+        apiKey: apiKey,
+        dangerouslyAllowBrowser: true,
+      });
+
+      try {
+        const completion = await openai.chat.completions.create({
+          messages: [
+            {
+              role: "system",
+              content: `You are an expert in taking interviews for students and professionals. Generate 5 questions you would ask in an interview for the ${name} domain. Separate each question with a newline. Do not include any additional text or characters.`,
+            },
+          ],
+          model: "gpt-3.5-turbo",
+        });
+
+        const questionsContent = completion.choices[0].message.content;
+        const array = questionsContent ? questionsContent.split("\n") : [];
+        setQuestions(array);
+
+        console.log("Questions:", array);
+      } catch (error) {
+        console.error("Error fetching questions:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchQuestions();
+  }, [name]);
 
   const [questionNumber, setQuestionNumber] = useState(0);
-  const questions = ["question1", "question2", "question3"];
 
   return (
     <div className="mt-14">
       <div className="w-full text-gray-900 bg-slate-200 p-4 mt-6 rounded-lg">
-      <h2 className="text-4xl ">{name}</h2>
-      <QuestionCard question={questions[questionNumber]} setQuestionNumber = {setQuestionNumber} questionNumber = {questionNumber} />
-      <AudioInput />
-
+        <h2 className="text-4xl ">{name}</h2>
+        <QuestionCard
+          question={questions[questionNumber]}
+          setQuestionNumber={setQuestionNumber}
+          questionNumber={questionNumber}
+        />
+        <AudioInput />
       </div>
     </div>
   );
