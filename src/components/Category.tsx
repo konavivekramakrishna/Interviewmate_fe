@@ -7,7 +7,9 @@ const Category = ({ name }: { name: string }) => {
 
   return (
     <div
-      className={"cursor-pointer p-2 m-2 rounded-md bg-slate-500 hover:bg-slate-700 hover:text-gray-100 w-80 text-center"}
+      className={
+        "cursor-pointer p-2 m-2 rounded-md bg-slate-500 hover:bg-slate-700 hover:text-gray-100 w-80 text-center"
+      }
       onClick={handleClick}
     >
       {name}

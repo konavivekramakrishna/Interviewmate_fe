@@ -1,6 +1,6 @@
 import { createContext, useState, Dispatch, SetStateAction } from "react";
 
-type Questions = string[];  
+type Questions = string[];
 
 type QuestionsContextType = {
   questions: Questions;
