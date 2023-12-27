@@ -13,12 +13,9 @@ const QuestionCard = ({
     console.log("submit");
   }
 
-
   return (
     <div>
-      <div className="flex flex-col text-gray-800 m-2 text-xl">
-        {questionNumber + 1} . {question}
-      </div>
+      <div className="flex flex-col text-gray-800 m-2 text-xl">{question}</div>
       {questionNumber === 2 ? (
         <button
           className="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 mx-4 my-6 rounded-lg"
@@ -38,6 +35,7 @@ const QuestionCard = ({
           Next
         </button>
       )}
+      <AudioInput />
     </div>
   );
 };

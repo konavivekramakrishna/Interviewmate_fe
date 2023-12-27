@@ -3,6 +3,7 @@ import QuestionCard from "./QuestionCard";
 import AudioInput from "./AudioInput";
 import { QuestionsContext } from "../context/questions";
 import OpenAI from "openai";
+import LoadingSpinner from "./LoadingSpinner";
 
 const CategoryPage = ({ name }: { name: string }) => {
   const { questions, setQuestions } = useContext(QuestionsContext);
@@ -23,7 +24,7 @@ const CategoryPage = ({ name }: { name: string }) => {
           messages: [
             {
               role: "system",
-              content: `You are an expert in taking interviews for students and professionals. Generate 5 questions you would ask in an interview for the ${name} domain. Separate each question with a newline. Do not include any additional text or characters.`,
+              content: `You are an expert in taking interviews for students and professionals. Generate 3 questions you would ask in an interview for the ${name} domain.Do not include any additional text or characters.`,
             },
           ],
           model: "gpt-3.5-turbo",
@@ -48,15 +49,18 @@ const CategoryPage = ({ name }: { name: string }) => {
 
   return (
     <div className="mt-14">
-      <div className="w-full text-gray-900 bg-slate-200 p-4 mt-6 rounded-lg">
-        <h2 className="text-4xl ">{name}</h2>
-        <QuestionCard
-          question={questions[questionNumber]}
-          setQuestionNumber={setQuestionNumber}
-          questionNumber={questionNumber}
-        />
-        <AudioInput />
-      </div>
+      {loading ? (
+        <div className="justify-center items-center"><LoadingSpinner/></div>
+      ) : (
+        <div className="max-w-[800px] text-gray-900 bg-slate-200 p-4 mt-6 rounded-lg">
+          <h2 className="text-4xl ">{name}</h2>
+          <QuestionCard
+            question={questions[questionNumber]}
+            setQuestionNumber={setQuestionNumber}
+            questionNumber={questionNumber}
+          />
+        </div>
+      )}
     </div>
   );
 };
