@@ -35,7 +35,10 @@ const QuestionCard = ({
           Next
         </button>
       )}
-      <AudioInput />
+      <AudioInput
+        index={questionNumber}
+        setQuestionNumber={setQuestionNumber}
+      />
     </div>
   );
 };

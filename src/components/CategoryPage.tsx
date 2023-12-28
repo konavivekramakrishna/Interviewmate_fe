@@ -50,7 +50,9 @@ const CategoryPage = ({ name }: { name: string }) => {
   return (
     <div className="mt-14">
       {loading ? (
-        <div className="justify-center items-center"><LoadingSpinner/></div>
+        <div className="justify-center items-center">
+          <LoadingSpinner />
+        </div>
       ) : (
         <div className="max-w-[800px] text-gray-900 bg-slate-200 p-4 mt-6 rounded-lg">
           <h2 className="text-4xl ">{name}</h2>
