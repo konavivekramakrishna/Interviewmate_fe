@@ -3,10 +3,10 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { AnswersContext } from "../context/answers";
+import { navigate } from "raviger";
 
 interface Props {
   index: number;
-
   setQuestionNumber: (number: number) => void;
 }
 
@@ -27,8 +27,7 @@ const AudioInput = (props: Props) => {
 
     if (props.index == 2) {
       props.setQuestionNumber(props.index + 1);
-
-      // submit logic here
+      navigate("/results");
     } else {
       props.setQuestionNumber(props.index + 1);
     }
