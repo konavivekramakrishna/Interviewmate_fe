@@ -14,8 +14,8 @@ const categoryList = [
 export default function Home() {
   return (
       <div className="flex flex-col gap-2 justify-center items-center mt-6">
-        <div className="text-3xl font-bold underline">
-          Select a category
+        <div className="text-3xl font-bold ">
+          Choose the field you want to practice
         </div>
           <Categories categoryList={categoryList} />
       </div>

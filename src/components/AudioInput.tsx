@@ -47,7 +47,7 @@ const AudioInput = (props: Props) => {
       <div className="container">
         <div className="main-content">{transcript}</div>
         <button
-          className="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 mx-4 my-6 rounded-lg"
+          className="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 m-4 rounded-lg border-2 hover:border-gray-100 shadow-sm shadow-black"
           onClick={isRecording ? stopListening : startListening}
         >
           {isRecording
