@@ -14,14 +14,14 @@ export const NavBar = () => {
             className="flex items-center justify-center p-2 mx-1 text-gray-900 rounded-lg dark:text-white dark:hover:bg-slate-900 group"
             exactActiveClass="border border-slate-200"
           >
-            <span className="flex-1 whitespace-nowrap">Home</span>
+            <span className="flex-1 whitespace-nowrap font-custom">Home</span>
           </ActiveLink>
           <ActiveLink
             href="/about"
             className="flex items-center p-2 mx-1 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-slate-900 group"
             exactActiveClass="border border-slate-200"
           >
-            <span className="flex-1 whitespace-nowrap">About</span>
+            <span className="flex-1 whitespace-nowrap font-custom">About</span>
           </ActiveLink>
         </div>
       </div>

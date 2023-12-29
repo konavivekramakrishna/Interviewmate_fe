@@ -70,11 +70,11 @@ const Results = () => {
             "cursor-pointer p-2 mt-14 rounded-md bg-slate-300 w-[400px] text-center"
           }
         >
-          <div className="flex flex-col text-gray-800 m-2 text-xl">
+          <div className="flex flex-col text-gray-800 font-custom m-2 text-xl">
             Submitted Successfully!!
           </div>
           <button
-            className="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 m-4 rounded-lg border-2 hover:border-gray-100 shadow-sm shadow-black"
+            className="bg-slate-600 hover:bg-slate-800 text-white font-bold font-custom py-2 px-4 m-4 rounded-lg border-2 hover:border-gray-100 shadow-sm shadow-black"
             onClick={() => {
               handleSubmit();
             }}
@@ -92,7 +92,7 @@ const Results = () => {
             {results}
           </div>
           <button
-            className="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 m-4 rounded-lg border-2 hover:border-gray-100 shadow-sm shadow-black"
+            className="bg-slate-600 hover:bg-slate-800 text-white font-bold font-custom py-2 px-4 m-4 rounded-lg border-2 hover:border-gray-100 shadow-sm shadow-black"
             onClick={() => {
               navigate("/");
             }}

@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import QuestionCard from "./QuestionCard";
-import AudioInput from "./AudioInput";
 import { QuestionsContext } from "../context/questions";
 import OpenAI from "openai";
 import LoadingSpinner from "./LoadingSpinner";
