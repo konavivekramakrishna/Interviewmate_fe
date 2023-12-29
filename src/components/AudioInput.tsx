@@ -25,7 +25,7 @@ const AudioInput = (props: Props) => {
     console.log("ans", answers);
     console.log("ind", props.index);
 
-    if (props.index == 2) {
+    if (props.index === 2) {
       props.setQuestionNumber(props.index + 1);
       navigate("/results");
     } else {
@@ -51,7 +51,7 @@ const AudioInput = (props: Props) => {
           onClick={isRecording ? stopListening : startListening}
         >
           {isRecording
-            ? props.index == 2
+            ? props.index === 2
               ? "Submit"
               : "Stop Recording"
             : "Start Recording"}
