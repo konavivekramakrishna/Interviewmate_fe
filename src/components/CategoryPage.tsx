@@ -23,7 +23,7 @@ const CategoryPage = ({ name }: { name: string }) => {
           messages: [
             {
               role: "system",
-              content: `You are an expert in taking interviews for students and professionals. Generate 3 questions you would ask in an interview for the ${name} domain.Do not include any additional text or characters.`,
+              content: `You are an expert in taking interviews for students and professionals. Generate 3 questions you would ask in an interview for${name} domain. The question must be easy level. The questions must be suitable for technical interview and should be more specific about the domain related buzz words Instead of numbering the questions use bullet points. No other text must be generated except the questions. Make sure that you do not overdo the question and be specific to one line only.  Do not acknowledge that you have generated the questions.`,
             },
           ],
           model: "gpt-3.5-turbo",

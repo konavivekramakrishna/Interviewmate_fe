@@ -89,7 +89,7 @@ const Results = () => {
           }
         >
           <div className="flex flex-col text-gray-800 m-2 text-xl">
-            {results}
+            {results}/100
           </div>
           <button
             className="bg-slate-600 hover:bg-slate-800 text-white font-bold font-custom py-2 px-4 m-4 rounded-lg border-2 hover:border-gray-100 shadow-sm shadow-black"
