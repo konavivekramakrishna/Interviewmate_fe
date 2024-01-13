@@ -7,7 +7,7 @@ import { QuestionsProvider } from "./context/questions";
 
 function App() {
   return (
-    <div className="flex bg-gray-100 min-h-screen font-sans">
+    <div>
       <QuestionsProvider>
         <AnswersProvider>
           <AppContainer>
