@@ -8,18 +8,21 @@ function Foot() {
         <div className="w-full">
           <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
             <div>
-              <Footer.Brand
+              {/* <Footer.Brand
                 href="https://flowbite.com"
                 src="https://flowbite.com/docs/images/logo.svg"
                 alt="Flowbite Logo"
                 name="Interview Mate"
-              />
+              /> */}
+              <h1 className="flex items-center p-2 mx-2 rounded-lg font-extrabold text-white">
+                Interview Mate
+              </h1>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6 font-custom">
               <div>
                 <Footer.Title title="about" />
                 <Footer.LinkGroup col>
-                  <Footer.Link href="#">Interview Mate</Footer.Link>
+                  <Footer.Link href="/about">Interview Mate</Footer.Link>
                 </Footer.LinkGroup>
               </div>
               <div>
